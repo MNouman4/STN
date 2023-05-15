@@ -4,10 +4,11 @@ pipeline {
     DOCKER_TAG = getDockerTag()
   }
   stages {
-    stage("Building Docker Image")
+    stage("Building Docker Image"){
     steps {
       sh "docker build -t nouman74/stn:DOCKER_TAG"
     }
+   }
   }
 }
 def getDockerTag(){
